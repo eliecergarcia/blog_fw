@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,17 +10,51 @@ import Menu from '../../../public/menu.svg';
 const Navbar: React.FC = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [navbarBgColor, setNavbarBgColor] = useState<string>('bg-primary');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.getElementById('hero');
+      const aboutSection = document.getElementById('about');
+
+      if (heroSection && aboutSection) {
+        const heroOffset = heroSection.offsetTop;
+        const aboutOffset = aboutSection.offsetTop;
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition >= heroOffset && scrollPosition < aboutOffset) {
+          setNavbarBgColor('bg-primary');
+        } else if (scrollPosition >= aboutOffset) {
+          setNavbarBgColor('bg-primary');
+        }
+      }
+    };
+
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className="h-[10vh] sticky top-0 z-20 bg-primary py-4">
+    <nav className={`h-[10vh] sticky top-0 z-20 py-4 ${navbarBgColor}`}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
-            <Image className="h-2" src={logoFlatwhite} alt="Logo" />
+            <Image
+              className="h-2"
+              src={logoFlatwhite}
+              alt="Logo"
+              height={75}
+              priority={true}
+            />
           </div>
 
           {/* Mobile menu button (shown on small screens) */}
@@ -29,16 +63,16 @@ const Navbar: React.FC = () => {
               onClick={toggleMenu}
               className="text-white px-3 py-2 rounded-md text-lg font-bold font- absolute top-10 right-10"
             >
-              <Image src={Menu} alt="Menu" />
+              <Image src={Menu} alt="Menu" priority={true} />
             </button>
           </div>
 
           {/* Right side - Navigation options */}
           <div className="hidden md:flex space-x-4">
-            <Link href="/acerca-de">
+            <Link href="/#about">
               <a
                 className={
-                  router.pathname === '/acerca-de'
+                  router.pathname === '/#about'
                     ? 'text-white'
                     : 'text-white px-3 py-2 rounded-md text-lg font-bold hover:underline'
                 }

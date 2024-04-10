@@ -20,14 +20,8 @@ const Index = () => (
       />
     }
   >
-    {/* <div className="flex flex-col min-h-screen"> */}
-    {/* <div className="h-20 w-full bg-black"></div> */}
-    {/* <div className="h-screen flex-grow"> */}
     <Hero />
     <About />
-    {/* </div> */}
-    {/* </div> */}
-    {/* <BlogGallery posts={props.posts} pagination={props.pagination} /> */}
   </Main>
 );
 
