@@ -2,9 +2,9 @@ import React from 'react';
 
 export const About = () => {
   return (
-    <div className="p-5 bg-primary flex gap-8 flex-col lg:flex-row-reverse">
+    <div className="min-h-[90vh] p-5 bg-primary flex gap-8 flex-col lg:flex-row-reverse">
       <img
-        src="https://s3-alpha-sig.figma.com/img/566c/53c0/a7bd87bd0aaf46ca578e5430808811aa?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=SpD4zlwbhzN1rsARNh6q-A7qTZk0BzOstHeFzQs4hLfraCMvDem5VlT4kRXfzYEVpPCdlXYi6RpSHnuN~XfNhdhsb-GCEAiBcHhJeYLxMjMqCxFJnW406ei2qyuZ7fGCP2l5BfwAYn89qDH0qbXA9U3fYzLwtXjayFJ1nsVyCEnbqq1slyyb8AMnL6-q1EhuFSJkEz2tGD-eDNhmk~ksXhyVoI6Efeass1pdG3A5rBIuhu7JzubuKZW1jz5SjzUH7ZBM8d7507pdgKY5qPlaohFpM1uJLgQahLOX-9LrR9l0nHUsW7Y2SEfx3hT70f8bhfRKOKurKs9AyfUYANU3LA__"
+        src="https://s3-alpha-sig.figma.com/img/566c/53c0/a7bd87bd0aaf46ca578e5430808811aa?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Tb-LrSCg4sxzGJk1bltXXeRUlaKkRiOXsU2E8Cw692BvT9pJFGWysiDqXeYMFIb8WIgNJNHOjcwrUHQ95IeRzwqfYSM4h8KQeN8b8eTKjxzL3rhKOQJA9EWvJlNJ6FGxa8SSY~bAsZtSGXsXWe0mcI9PAXqRNKQrUhfhBUPeNUdCO4brJAC58rmcr~Ah6TcQCnbyyHqmIoohtFpKTJwBgYwqWUa3ndNe7naGq~y7HtCCR2WvNKfbeTD4Vxa4CDhql306s5MdB-WG1-0zRtXv2~7pnCLuB4i1jqMgs625RbJvfZGfnYPDBrC741MK4MtR2hPAVprUSoTlOUUG-CBrHw__"
         alt="aboutImage"
         className="object-cover w-full lg:w-1/2"
       />
