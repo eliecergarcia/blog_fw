@@ -10,12 +10,12 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <div className="antialiased w-full text-gray-700 px-0">
+  <div className="h-full">
     {props.meta}
-    <Navbar />
-    <div className="max-w-screen-md mx-auto">
-      <div className="text-xl py-5">{props.children}</div>
+    <div className="h-[20%] sticky top-0 z-50">
+      <Navbar />
     </div>
+    <div className="text-xl h-4/5">{props.children}</div>
   </div>
 );
 
