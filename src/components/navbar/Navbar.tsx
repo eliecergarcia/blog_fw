@@ -9,22 +9,51 @@ import Menu from '../../../public/menu.svg';
 
 const Navbar: React.FC = () => {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [navbarBgColor, setNavbarBgColor] = useState<string>('bg-primary');
 
   useEffect(() => {
     const handleScroll = () => {
       const heroSection = document.getElementById('hero');
       const aboutSection = document.getElementById('about');
+      const suscribeSection = document.getElementById('suscribe');
 
-      if (heroSection && aboutSection) {
-        const heroOffset = heroSection.offsetTop;
-        const aboutOffset = aboutSection.offsetTop;
-        const scrollPosition = window.scrollY;
+      if (heroSection && aboutSection && suscribeSection) {
+        const heroRect = heroSection.getBoundingClientRect();
+        const aboutRect = aboutSection.getBoundingClientRect();
 
-        if (scrollPosition >= heroOffset && scrollPosition < aboutOffset) {
+        const isHeroVisible =
+          heroRect.top >= 0 && heroRect.bottom <= window.innerHeight;
+        const isAboutVisible =
+          aboutRect.top >= 0 && aboutRect.bottom <= window.innerHeight;
+        if (isHeroVisible) {
           setNavbarBgColor('bg-primary');
-        } else if (scrollPosition >= aboutOffset) {
+        } else if (isAboutVisible) {
+          setNavbarBgColor('bg-primary');
+        }
+      }
+    };
+
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      const suscribeSection = document.getElementById('suscribe');
+
+      if (suscribeSection) {
+        const suscribeRect = suscribeSection.getBoundingClientRect();
+        const isSuscribeVisible =
+          suscribeRect.top >= -50 &&
+          suscribeRect.bottom <= window.innerHeight + 50;
+        if (isSuscribeVisible) {
+          setNavbarBgColor('bg-secondary');
+        } else {
           setNavbarBgColor('bg-primary');
         }
       }
@@ -44,24 +73,26 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`h-[10vh] sticky top-0 z-20 py-4 ${navbarBgColor}`}>
+    <nav className={`h-[10vh] sticky top-0 z-20 py-3  ${navbarBgColor}`}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
-            <Image
-              className="h-2"
-              src={logoFlatwhite}
-              alt="Logo"
-              height={75}
-              priority={true}
-            />
+            <Link href={'/#hero'}>
+              <Image
+                className="h-2"
+                src={logoFlatwhite}
+                alt="Logo"
+                height={55}
+                priority={true}
+              />
+            </Link>
           </div>
 
           {/* Mobile menu button (shown on small screens) */}
           <div className="md:hidden block">
             <button
               onClick={toggleMenu}
-              className="text-white px-3 py-2 rounded-md text-lg font-bold font- absolute top-10 right-10"
+              className="text-white px-3 py-2 rounded-md text-lg font-bold absolute top-5 md:top-10 right-10 "
             >
               <Image src={Menu} alt="Menu" priority={true} />
             </button>
@@ -80,10 +111,10 @@ const Navbar: React.FC = () => {
                 Acerca de
               </a>
             </Link>
-            <Link href="/inscribete">
+            <Link href="/#suscribe">
               <a
                 className={
-                  router.pathname === '/inscribete'
+                  router.pathname === '/#suscribe'
                     ? 'text-white'
                     : 'text-white px-3 py-2 rounded-md text-lg font-bold hover:underline'
                 }
@@ -91,29 +122,16 @@ const Navbar: React.FC = () => {
                 Inscribete
               </a>
             </Link>
-            <Link href="/blog">
-              <a
-                className={
-                  router.pathname === '/blog'
-                    ? 'text-white'
-                    : 'text-white px-3 py-2 rounded-md text-lg font-bold hover:underline'
-                }
-              >
-                Blog
-              </a>
-            </Link>
           </div>
 
           {/* Mobile dropdown menu */}
-          <div
-            className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}
-            style={{}}
-          >
-            <div className="mt-2 w-48 bg-white rounded-md shadow-lg fixed right-2 top-30 z-[9999]">
-              <Link href="/acerca-de">
+          <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
+            <div className="mt-2 w-48 bg-white rounded-md shadow-lg fixed right-2 top-10 z-[9999]">
+              <Link href="/#about">
                 <a
+                  onClick={toggleMenu}
                   className={
-                    router.pathname === '/acerca-de'
+                    router.pathname === '/#about'
                       ? 'block px-4 py-2 text-gray-800 hover:bg-gray-200'
                       : 'block px-4 py-2 text-gray-600 hover:bg-gray-200'
                   }
@@ -121,26 +139,16 @@ const Navbar: React.FC = () => {
                   Acerca de
                 </a>
               </Link>
-              <Link href="/inscribete">
+              <Link href="/#suscribe">
                 <a
+                  onClick={toggleMenu}
                   className={
-                    router.pathname === '/inscribete'
+                    router.pathname === '/#suscribe'
                       ? 'block px-4 py-2 text-gray-800 hover:bg-gray-200'
                       : 'block px-4 py-2 text-gray-600 hover:bg-gray-200'
                   }
                 >
                   Inscribete
-                </a>
-              </Link>
-              <Link href="/blog">
-                <a
-                  className={
-                    router.pathname === '/blog'
-                      ? 'block px-4 py-2 text-gray-800 hover:bg-gray-200'
-                      : 'block px-4 py-2 text-gray-600 hover:bg-gray-200'
-                  }
-                >
-                  Blog
                 </a>
               </Link>
             </div>
