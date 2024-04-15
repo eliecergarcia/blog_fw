@@ -4,6 +4,7 @@ import { GetStaticProps } from 'next';
 
 import { About } from '../about/About';
 import { IBlogGalleryProps } from '../blog/BlogGallery';
+import { Contact } from '../contact/Contact';
 import { Hero } from '../hero/Hero';
 import { Meta } from '../layout/Meta';
 import { IPaginationProps } from '../pagination/Pagination';
@@ -20,14 +21,9 @@ const Index = () => (
       />
     }
   >
-    {/* <div className="flex flex-col min-h-screen"> */}
-    {/* <div className="h-20 w-full bg-black"></div> */}
-    {/* <div className="h-screen flex-grow"> */}
     <Hero />
     <About />
-    {/* </div> */}
-    {/* </div> */}
-    {/* <BlogGallery posts={props.posts} pagination={props.pagination} /> */}
+    <Contact />
   </Main>
 );
 

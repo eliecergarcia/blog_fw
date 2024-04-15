@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Icon } from '../components/icon/Icon';
+import Newsletter from '../components/newsletter/Newsletter';
 
 export const Contact = () => {
   return (
@@ -36,7 +37,9 @@ export const Contact = () => {
           </a>
         </div>
       </section>
-      <div className="col-span-2">mailchimp</div>
+      <div className="col-span-2">
+        <Newsletter />
+      </div>
     </div>
   );
 };
