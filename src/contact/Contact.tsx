@@ -37,7 +37,7 @@ export const Contact = () => {
           </a>
         </div>
       </section>
-      <div className="col-span-2">
+      <div className="col-span-2 flex justify-center items-start py-10">
         <Newsletter />
       </div>
     </div>

@@ -1,70 +1,83 @@
-import { FormEvent, useState } from 'react';
+import React from 'react';
 
-import axios from 'axios';
-
-const Newsletter = () => {
-  const [email, setEmail] = useState<string>('');
-  const [status, setStatus] = useState<
-    'success' | 'error' | 'loading' | 'idle'
-  >('idle');
-  const [responseMsg, setResponseMsg] = useState<string>('');
-  const [statusCode, setStatusCode] = useState<number>();
-
-  async function handleSubscribe(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus('loading');
-    try {
-      const response = await axios.post('/api/subscribe', { email });
-
-      setStatus('success');
-      setStatusCode(response.status);
-      setEmail('');
-      setResponseMsg(response.data.message);
-    } catch (err) {
-      if (axios.isAxiosError(err)) {
-        setStatus('error');
-        setStatusCode(err.response?.status);
-        setResponseMsg(err.response?.data.error);
-      }
-    }
-  }
-
+const SubscribeForm = () => {
   return (
-    <>
+    <div
+      id="mc_embed_signup"
+      className="bg-white clear-left font-helvetica font-sans text-base px-4 py-2 w-96"
+    >
+      <link
+        href="//cdn-images.mailchimp.com/embedcode/classic-061523.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <style type="text/css">
+        {`
+              #mc_embed_signup { background: #fff; clear: left; font: 14px Helvetica, Arial, sans-serif; width: 600px; }
+              /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block. */
+            `}
+      </style>
       <form
-        className="rounded px-8 pt-6 pb-8 mb-4 max-w-md"
-        onSubmit={handleSubscribe}
+        action="https://gmail.us18.list-manage.com/subscribe/post?u=a55c1e33464aaa3993284fcb0&amp;id=6d29289de3&amp;f_id=006421e7f0"
+        method="post"
+        id="mc-embedded-subscribe-form"
+        name="mc-embedded-subscribe-form"
+        className="validate"
+        target="_blank"
       >
-        <div className="flex">
-          <input
-            className={`grow mr-1 transition ease-out delay-75 focus-within:border-2 focus-within:border-purple-600 items-center h-14 pr-0.5 rounded caret-purple-700 outline-none px-4 disabled:border-slate-400 border ${
-              statusCode === 400 ? 'border-orange-500' : 'border-purple-600'
-            } `}
-            type="email"
-            placeholder="What is your email address?"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            disabled={status === 'loading'}
-          />
-          <button
-            className="bg-violet-700 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-slate-400"
-            type="submit"
-            disabled={status === 'loading'}
+        <div id="mc_embed_signup_scroll">
+          <h2>Suscríbete</h2>
+          <div className="mc-field-group">
+            <label htmlFor="mce-EMAIL">
+              Dirección de correo electrónico{' '}
+              <span className="asterisk">*</span>
+            </label>
+            <input
+              type="email"
+              name="EMAIL"
+              className="required email"
+              id="mce-EMAIL"
+              required={true}
+            />
+          </div>
+          <div id="mce-responses" className="clear foot">
+            <div
+              className="response"
+              id="mce-error-response"
+              style={{ display: 'none' }}
+            ></div>
+            <div
+              className="response"
+              id="mce-success-response"
+              style={{ display: 'none' }}
+            ></div>
+          </div>
+          <div
+            aria-hidden="true"
+            style={{ position: 'absolute', left: '-5000px' }}
           >
-            Suscribirse
-          </button>
-        </div>
-        <div className="server-message pt-4 text-green-600">
-          {status === 'success' ? (
-            <p className="text-green-600">{responseMsg}</p>
-          ) : null}
-          {status === 'error' ? (
-            <p className="text-orange-600">{responseMsg}</p>
-          ) : null}
+            <input
+              type="text"
+              name="b_a55c1e33464aaa3993284fcb0_6d29289de3"
+              tabIndex={-1}
+              value=""
+            />
+          </div>
+          <div className="optionalParent">
+            <div className="clear foot">
+              <input
+                type="submit"
+                name="subscribe"
+                id="mc-embedded-subscribe"
+                className="button"
+                value="Suscribirse"
+              />
+            </div>
+          </div>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 
-export default Newsletter;
+export default SubscribeForm;
