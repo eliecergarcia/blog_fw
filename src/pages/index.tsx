@@ -2,14 +2,15 @@ import React from 'react';
 
 import { GetStaticProps } from 'next';
 
-import { About } from '../about/About';
 import { IBlogGalleryProps } from '../blog/BlogGallery';
+import { Contact } from '../contact/Contact';
 import { Hero } from '../hero/Hero';
 import { Meta } from '../layout/Meta';
 import { IPaginationProps } from '../pagination/Pagination';
 import { Main } from '../templates/Main';
 import { AppConfig } from '../utils/AppConfig';
 import { getAllPosts } from '../utils/Content';
+import About from './about';
 
 const Index = () => (
   <Main
@@ -20,14 +21,9 @@ const Index = () => (
       />
     }
   >
-    {/* <div className="flex flex-col min-h-screen"> */}
-    {/* <div className="h-20 w-full bg-black"></div> */}
-    {/* <div className="h-screen flex-grow"> */}
     <Hero />
     <About />
-    {/* </div> */}
-    {/* </div> */}
-    {/* <BlogGallery posts={props.posts} pagination={props.pagination} /> */}
+    <Contact />
   </Main>
 );
 
