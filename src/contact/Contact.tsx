@@ -5,7 +5,10 @@ import Newsletter from '../components/newsletter/Newsletter';
 
 export const Contact = () => {
   return (
-    <div className="min-h-[90vh] p-5 bg-secondary grid gap-4 lg:grid-cols-3">
+    <div
+      id="suscribe"
+      className="min-h-[90vh] p-5 bg-secondary grid gap-4 lg:grid-cols-3"
+    >
       <section className="flex flex-col gap-20">
         <article className="text-white flex flex-col gap-4">
           <h2 className="text-4xl font-bold">Contáctanos</h2>
