@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Icon } from '../components/icon/Icon';
-import Newsletter from '../components/newsletter/Newsletter';
+import SubscribeForm from '../components/newsletter/Newsletter';
 
 export const Contact = () => {
   return (
@@ -41,7 +41,7 @@ export const Contact = () => {
         </div>
       </section>
       <div className="col-span-2 flex justify-center items-start py-10">
-        <Newsletter />
+        <SubscribeForm />
       </div>
     </div>
   );

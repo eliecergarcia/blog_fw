@@ -16,9 +16,7 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       const heroSection = document.getElementById('hero');
       const aboutSection = document.getElementById('about');
-      const suscribeSection = document.getElementById('suscribe');
-
-      if (heroSection && aboutSection && suscribeSection) {
+      if (heroSection && aboutSection) {
         const heroRect = heroSection.getBoundingClientRect();
         const aboutRect = aboutSection.getBoundingClientRect();
 
@@ -26,9 +24,7 @@ const Navbar: React.FC = () => {
           heroRect.top >= 0 && heroRect.bottom <= window.innerHeight;
         const isAboutVisible =
           aboutRect.top >= 0 && aboutRect.bottom <= window.innerHeight;
-        if (isHeroVisible) {
-          setNavbarBgColor('bg-primary');
-        } else if (isAboutVisible) {
+        if (isHeroVisible && isAboutVisible) {
           setNavbarBgColor('bg-primary');
         }
       }
@@ -45,7 +41,6 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const suscribeSection = document.getElementById('suscribe');
-
       if (suscribeSection) {
         const suscribeRect = suscribeSection.getBoundingClientRect();
         const isSuscribeVisible =
@@ -77,15 +72,13 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
-            <Link href={'/#hero'}>
-              <Image
-                className="h-2"
-                src={logoFlatwhite}
-                alt="Logo"
-                height={55}
-                priority={true}
-              />
-            </Link>
+            <Image
+              className="h-2"
+              src={logoFlatwhite}
+              alt="Logo"
+              height={55}
+              priority={true}
+            />
           </div>
 
           {/* Mobile menu button (shown on small screens) */}
