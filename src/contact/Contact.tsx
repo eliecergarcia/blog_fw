@@ -1,15 +1,16 @@
 import React from 'react';
 
 import { Icon } from '../components/icon/Icon';
+import SubscribeForm from '../components/newsletter/Newsletter';
 
 export const Contact = () => {
   return (
     <div
       id="suscribe"
-      className="min-h-[90vh] p-5 bg-secondary grid gap-4 lg:grid-cols-3"
+      className="min-h-[90vh] p-10 bg-secondary grid gap-8 lg:grid-cols-2"
     >
       <section className="flex flex-col gap-20">
-        <article className="text-white flex flex-col gap-4">
+        <article className="text-white flex flex-col gap-6">
           <h2 className="text-4xl font-bold">Contáctanos</h2>
           <p className="text-2xl">
             Conectando el futuro de TI: sumérgete en el mundo de la innovación y
@@ -39,7 +40,9 @@ export const Contact = () => {
           </a>
         </div>
       </section>
-      <div className="col-span-2">mailchimp</div>
+      <div className="col-span-1 flex justify-center items-start py-10">
+        <SubscribeForm />
+      </div>
     </div>
   );
 };
