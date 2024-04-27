@@ -1,4 +1,4 @@
-import React from 'react';
+import hero from '../../public/assets/images/Hero.png';
 
 export const Hero = () => {
   return (
@@ -11,7 +11,7 @@ export const Hero = () => {
         <span className="text-secondary"> FUTURO</span> TECH
       </h1>
       <img
-        src="https://s3-alpha-sig.figma.com/img/8a17/a662/13447c271143bc469160b5c112c30203?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CpYQbiX3WzMZapRJCDyZJi79asTY69V5WSbRNrkxX0syO99-D3aB7pS08XfJZ9LSkB3tQFc9HTclzTvouzCwVleEcEVNtHeZyQ-pJBU7Z9A3rvd4zvrwMy~Rz1PfWILuk4jBinCTujJKsoK4YemQa3wfM-TXEBTd0JYpD2QT6cN5OPjwCYHu~6xICMOevcUAnGmLPIw1rUuA4y64GWacp1sA3uVl7pOqmJAZa7dUz2M9AN37MXVlXcG2wLpHqaJIThD8~sPraPtUWYlw03G3VMr2MBIUKESyC5Lp-uo9yP71pFLNfJsSGEJwj1kN7OulNbls6AB~irpQONJa2j-9WQ__"
+        src={hero.src}
         alt="heroImage"
         className="rounded-[50px] w-full h-[80vh] object-cover"
       />

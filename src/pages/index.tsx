@@ -10,13 +10,14 @@ import { IPaginationProps } from '../pagination/Pagination';
 import { Main } from '../templates/Main';
 import { AppConfig } from '../utils/AppConfig';
 import { getAllPosts } from '../utils/Content';
-import About from './about';
+import { About } from '../about/About';
+
 
 const Index = () => (
   <Main
     meta={
       <Meta
-        title="Made with Next.js, TypeScript, ESLint, Prettier, PostCSS, Tailwind CSS"
+        title="Flatwhite"
         description={AppConfig.description}
       />
     }
