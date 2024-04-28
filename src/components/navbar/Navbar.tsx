@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import logoFlatwhite from '../../../public/assets/images/flatwhitelogo_white.png';
-import Image from 'next/image';
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -71,7 +70,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
-            <Image
+            <img
               className="h-2"
               src={logoFlatwhite.src}
               alt="Logo"
