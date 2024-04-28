@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import logoFlatwhite from '../../../public/flatwhitelogo_white.svg';
-import Menu from '../../../public/menu.svg';
+import logoFlatwhite from '../../../public/assets/images/flatwhitelogo_white.svg';
+import Menu from '../../..//public/assets/images/menu.svg';
 
 const Navbar: React.FC = () => {
   const router = useRouter();
