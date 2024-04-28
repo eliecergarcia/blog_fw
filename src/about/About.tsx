@@ -1,12 +1,10 @@
-import about from '../../public/assets/images/about.jpg';
-
 export const About = () => {
   return (
     <div
       id="about"
       className="min-h-[90vh] bg-primary flex flex-col lg:flex-row-reverse"
     >
-    <img src={about.src} alt="aboutImage"
+    <img src={'../../public/assets/images/about.jpg'} alt="aboutImage"
         className="w-full lg:w-1/2"
     />
       <article className="text-white flex flex-col gap-6 lg:w-1/2">
