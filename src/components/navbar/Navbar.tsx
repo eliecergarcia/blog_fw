@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -72,12 +71,11 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
-            <Image
+            <img
               className="h-2"
               src={logoFlatwhite}
               alt="Logo"
               height={55}
-              priority={true}
             />
           </div>
 
@@ -87,7 +85,7 @@ const Navbar: React.FC = () => {
               onClick={toggleMenu}
               className="text-white px-3 py-2 rounded-md text-lg font-bold absolute top-5 md:top-10 right-10 "
             >
-              <Image src={Menu} alt="Menu" priority={true} />
+              <img src={Menu} alt="Menu" />
             </button>
           </div>
 

@@ -1,6 +1,3 @@
-
-import Image from 'next/image';
-
 export const About = () => {
   return (
     <div
@@ -8,7 +5,7 @@ export const About = () => {
       className="min-h-[90vh] bg-primary flex flex-col lg:flex-row-reverse"
     >
       <div className="w-full lg:w-1/2">
-        <Image src={'../../public/assets/images/about.jpg'} alt="aboutImage" priority />
+        <img src={'../../public/assets/images/about.jpg'} alt="aboutImage" />
       </div>
       <article className="text-white flex flex-col gap-6 lg:w-1/2">
         <h2 className="text-5xl font-bold">Quiénes somos</h2>
