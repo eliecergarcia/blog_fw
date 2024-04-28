@@ -71,7 +71,6 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
             <img
-              className="h-2"
               src={logoFlatwhite.src}
               alt="Logo"
               height={55}
