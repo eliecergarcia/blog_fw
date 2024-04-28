@@ -26,16 +26,16 @@ export const Contact = () => {
           flatwhite.info@gmail.com
         </a>
         <div className="flex gap-16">
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/company/flatwhite/" target="_blank" rel="noopener noreferrer">
             <Icon className="fill-white h-10 w-10" name="linkedin" />
           </a>
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/flatwhite_community/" target="_blank" rel="noopener noreferrer">
             <Icon className="fill-white h-10 w-10" name="instagram" />
           </a>
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          {/* <a href="http://" target="_blank" rel="noopener noreferrer">
             <Icon className="fill-white h-10 w-10" name="github" />
-          </a>
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          </a> */}
+          <a href="https://www.tiktok.com/@flatwhiteoficial?lang=es" target="_blank" rel="noopener noreferrer">
             <Icon className="fill-white h-10 w-10" name="tiktok" />
           </a>
         </div>
