@@ -4,7 +4,7 @@ export const About = () => {
   return (
     <div
       id="about"
-      className="min-h-[90vh] bg-primary flex flex-col lg:flex-row-reverse"
+      className="min-h-[90vh] bg-primary p-5 flex flex-col lg:flex-row-reverse"
     >
     <img src={about.src} alt="aboutImage"
         className="w-full lg:w-1/2"

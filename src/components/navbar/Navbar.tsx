@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import logoFlatwhite from '../../../public/assets/images/flatwhitelogo_white.svg';
+import logoFlatwhite from '../../../public/assets/images/flatwhitelogo_white.png';
 import Image from 'next/image';
 
 const Navbar: React.FC = () => {
@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
           <div className="flex-shrink-0">
             <Image
               className="h-2"
-              src={logoFlatwhite}
+              src={logoFlatwhite.src}
               alt="Logo"
               height={55}
               width={55}
