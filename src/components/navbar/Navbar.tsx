@@ -66,8 +66,8 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`h-[10vh] sticky top-0 z-20 py-3  ${navbarBgColor}`}>
-      <div className="max-w-7xl mx-auto px-4">
+    <nav className={`lg:h-[10vh] md:h-[20vh] sticky top-0 z-20 py-3  ${navbarBgColor}`}>
+      <div className="max-w-7xl mx-auto px-4 h-full">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0">
             <img
