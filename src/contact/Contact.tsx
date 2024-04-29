@@ -32,9 +32,9 @@ export const Contact = () => {
           <a href="https://www.instagram.com/flatwhite_community/" target="_blank" rel="noopener noreferrer">
             <Icon className="fill-white h-10 w-10" name="instagram" />
           </a>
-          {/* <a href="http://" target="_blank" rel="noopener noreferrer">
-            <Icon className="fill-white h-10 w-10" name="github" />
-          </a> */}
+          <a href="https://www.youtube.com/@FlatWhiteOficial" target="_blank" rel="noopener noreferrer">
+            <Icon className="fill-white h-10 w-10" name="youtube" />
+          </a>
           <a href="https://www.tiktok.com/@flatwhiteoficial?lang=es" target="_blank" rel="noopener noreferrer">
             <Icon className="fill-white h-10 w-10" name="tiktok" />
           </a>
