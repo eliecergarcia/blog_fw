@@ -35,9 +35,9 @@ export const Contact = () => {
           <a href="https://www.youtube.com/@FlatWhiteOficial" target="_blank" rel="noopener noreferrer">
             <Icon className="fill-white h-10 w-10" name="youtube" />
           </a>
-          <a href="https://www.tiktok.com/@flatwhiteoficial?lang=es" target="_blank" rel="noopener noreferrer">
+          {/* <a href="https://www.tiktok.com/@flatwhiteoficial?lang=es" target="_blank" rel="noopener noreferrer">
             <Icon className="fill-white h-10 w-10" name="tiktok" />
-          </a>
+          </a> */}
         </div>
       </section>
       <div className="col-span-1 flex justify-center items-start py-10">
