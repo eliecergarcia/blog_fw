@@ -7,10 +7,10 @@ export const About = () => {
       className="min-h-[90vh] bg-primary p-5 flex flex-col lg:flex-row-reverse"
     >
     <img src={about.src} alt="aboutImage"
-        className="w-full lg:w-1/2"
+        className="w-full lg:w-1/2 object-cover"
     />
-      <article className="text-white flex flex-col gap-6 lg:w-1/2">
-        <h2 className="text-5xl font-bold">Quiénes somos</h2>
+      <article className="text-white flex flex-col gap-6 lg:w-1/2 text-[18px] pr-3 justify-center items-center xl:justify-start">
+        <h2 className="text-5xl font-bold text-center">Quiénes somos</h2>
         <p>
           En un mundo donde el networking en el ámbito tecnológico se ha vuelto esencial, nosotros en Flatwhite reinventamos la forma de conectar con desarrolladores. Sabemos que las conexiones profesionales son cruciales para el progreso en el desarrollo de software, pero también reconocemos los desafíos y la tediosa burocracia que a menudo acompañan a estos procesos. Por eso, nuestra plataforma elimina los obstáculos innecesarios, permitiendo a los profesionales de IT de todos los niveles colaborar, compartir conocimientos y crecer juntos.
         </p>
