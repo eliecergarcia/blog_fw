@@ -3,15 +3,15 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-// const baseUrl = '/flatwhite';
+const baseUrl = '/blog_fw';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  target: 'experimental-serverless-trace',
-  // Especifica el directorio de salida para los archivos HTML estáticos
-  distDir: 'out',
-  output: "export",  // <=== enables static exports
-  reactStrictMode: true,
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
+  basePath:baseUrl,
 };
 
 module.exports = nextConfig;
